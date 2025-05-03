@@ -3,9 +3,13 @@ import cv2
 import numpy as np
 import random
 from typing import List, Tuple
+import os
+
+# Compute the absolute path to the best.pt file
+MODEL_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../checkpoints/best.pt'))
 
 # Load the model once at module level for efficiency
-model = YOLO("backend/checkpoints/best.pt")
+model = YOLO(MODEL_PATH)
 
 def segment_rooms(image_path: str) -> Tuple[np.ndarray, List[np.ndarray]]:
     """
