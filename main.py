@@ -6,7 +6,6 @@ from config import engine
 
 import tables.users as user_table
 
-import routes.users as user_routes
 
 
 user_table.Base.metadata.create_all(bind=engine)
