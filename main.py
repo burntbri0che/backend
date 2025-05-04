@@ -1,5 +1,15 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, status, Depends, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
+from typing import List, Annotated
+from config import engine
+
+import tables.users as user_table
+
+import routes.users as user_routes
+
+
+user_table.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
@@ -11,6 +21,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.include_router(user_routes.router, prefix="/api", tags=["users"])
 
 @app.get("/")
 async def read_root():
