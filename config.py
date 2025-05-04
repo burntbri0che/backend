@@ -1,3 +1,4 @@
+import os
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, relationship
 from sqlalchemy.ext.declarative import declarative_base
@@ -17,6 +18,6 @@ def get_db():
         db.close()
 
 #jwt
-SECRET_KEY = "floorplanAPI"
+SECRET_KEY = os.getenv("SECRET_KEY", "your-super-secret-key-with-at-least-32-characters")
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
