@@ -1,1 +1,11 @@
+<<<<<<< HEAD
 *.pyc
+=======
+app/api/__pycache__/__init__.cpython-311.pyc
+app/api/__pycache__/endpoints.cpython-311.pyc
+app/services/__pycache__/__init__.cpython-311.pyc
+app/services/__pycache__/yolo_segmentation.cpython-311.pyc
+checkpoints/download.jpeg
+checkpoints/testing1.py
+app/__pycache__/__init__.cpython-311.pyc
+>>>>>>> c81cd5848b50acc4b2db25dcecfa0d20f52fa957
